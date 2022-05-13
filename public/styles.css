@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Goldman', cursive;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #19282F;
   color: aliceblue;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-image: url(../src/images/bgImg.png);
 }
 
 code {
