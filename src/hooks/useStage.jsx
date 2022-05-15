@@ -25,17 +25,22 @@ export const useStage = (player, resetPlayer) => {
                             value,
                             // if the tetromino has collided, we set it to merged and do not clear it in newStage
                             `${player.collided ? 'merged' : 'clear'}`,
-                        ]
+                        ];
                     }
                 });               
             });
+
+            // check for collision
+            if (player.collided) {
+                resetPlayer();
+            }
             
             return newStage;
         };
 
         setStage(prev => updateStage(prev));
         // dependencies in []
-    }, [player]);
+    }, [player, resetPlayer]);
 
     return [stage, setStage];
 }
