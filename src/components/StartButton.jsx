@@ -3,7 +3,7 @@ import { StyledStartButton } from './styles/StyledStartButton';
 
 function StartButton({ callback, text }) {
     return (
-    <StyledStartButton onClick={callback}>{text}</StyledStartButton>
+        <StyledStartButton onClick={callback}>{text}</StyledStartButton>
     );
 }
 
