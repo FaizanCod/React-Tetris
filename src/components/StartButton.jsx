@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyledStartButton } from './styles/StyledStartButton';
 
-function StartButton({ callback }) {
+function StartButton({ callback, text }) {
     return (
-    <StyledStartButton onClick={callback}>Start Game</StyledStartButton>
+    <StyledStartButton onClick={callback}>{text}</StyledStartButton>
     );
 }
 

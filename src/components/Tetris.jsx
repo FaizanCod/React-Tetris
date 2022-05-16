@@ -23,7 +23,7 @@ function Tetris () {
     const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
     // sending player to useStage
     const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
-    const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
+    const [score, setScore, highScore, setHighScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
     console.log('re-render');
 
@@ -114,16 +114,26 @@ function Tetris () {
                 <Stage stage={stage} />
                 <aside>
                 { gameOver ? (
-                    <Display gameOver={gameOver} text="Game Over" />
+                    <div>
+                        <Display text={`Your Score: ${score}`} />
+                        {
+                            (score >= highScore && score !== 0) ? 
+                            <p>You have a new High Score!</p> :
+                            null
+                        }
+                        <Display text={`High Score: ${(score > highScore) ? setHighScore(score) : highScore}`} />
+                        <Display gameOver={gameOver} text="Game Over" />
+                        <StartButton callback={startGame} text="Play Again" />
+                    </div>
                 ) : (
                     <div>
                         <Display text={`Score: ${score}`} />
                         <Display text={`Rows: ${rows}`} />
                         <Display text={`Level: ${level}`} />
+                        {/* calling startGame each time button is clicked */}
+                        <StartButton callback={startGame} text="Start Game" />
                     </div>
                 )}
-                    {/* calling startGame each time button is clicked */}
-                    <StartButton callback={startGame}/>
                 </aside>
             </StyledTetris>
         </StyledTetrisWrapper>
