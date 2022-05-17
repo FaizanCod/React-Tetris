@@ -1,6 +1,7 @@
 # Simple Tetris Game using React
 
-The site is live at https://react-tetris-faizan.netlify.app/
+The gameis live at https://react-tetris-faizan.netlify.app/ 
+Enjoy!
 
 Tetris is a puzzle video game that all of us might have played as children. I tried to recreate the game using React and it turned out amazing. Do check it out and relive your childhood days!
 
